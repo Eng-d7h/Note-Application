@@ -26,15 +26,16 @@ function App() {
     setEditId(index)
   }
   return(
-    <div className="shadow-md border-solid rounded-2xl w-lg p-6 mt-30 ml-110">
+    <div className="shadow-md rounded-2xl w-full max-w-lg p-6 mx-auto my-10">
       <h3 className="font-bold text-center">Notes</h3>
 
+     <div className="flex mt-6"> 
       <input placeholder="typing..." value={text} 
-      className="border border-gray-300 rounded-l-lg px-3 py-2 w-90 mt-6 ml-8 outline-none focus:border-blue-500"
+      className="border border-gray-300 rounded-l-lg px-3 py-2 flex-1 outline-none focus:border-blue-500"
       onChange={(e) => setText(e.target.value)}/>
 
-      <button onClick={Add}
-      className=" bg-black text-white p-2 rounded-r-xl ">{editeId !== null ? "done" : "add"}</button>
+      <button onClick={Add} className=" bg-black text-white p-2 rounded-r-xl ">{editeId !== null ? "done" : "add"}</button>
+      </div>
       <ul> 
       {notes.map((note , index) => (
         <li key={index}
